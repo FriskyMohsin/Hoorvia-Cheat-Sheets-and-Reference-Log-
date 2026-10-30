@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, kbd, .font-mono {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+@media print {
+  @page {
+    size: auto;
+    margin: 12mm 15mm;
+  }
+
+  /* Reset layout for physical paper output */
+  *, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 9.5pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide navigation, footers, interactive buttons, modal overlays, search bars */
+  header, 
+  footer, 
+  nav, 
+  button, 
+  input, 
+  .no-print, 
+  .filter-bar, 
+  [role="dialog"], 
+  .modal-backdrop,
+  .sticky {
+    display: none !important;
+  }
+
+  /* Display print-only elements */
+  .print-only,
+  .print-header,
+  .print-footer {
+    display: block !important;
+  }
+
+  /* Main container full width */
+  main, .max-w-7xl {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Table Print Styling */
+  .print-table {
+    box-shadow: none !important;
+    border: 1px solid #0f172a !important;
+    width: 100% !important;
+    margin-top: 8pt !important;
+    margin-bottom: 8pt !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto;
+  }
+
+  .print-table table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  .print-table thead {
+    display: table-header-group !important; /* Repeat table header across printed pages */
+  }
+
+  .print-table thead th {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border: 1px solid #0f172a !important;
+    padding: 6pt 8pt !important;
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-table tbody tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-table tbody tr:nth-child(even) {
+    background-color: #f8fafc !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-table tbody td {
+    border: 1px solid #cbd5e1 !important;
+    padding: 5pt 7pt !important;
+    font-size: 8pt !important;
+    font-family: var(--font-mono), monospace !important;
+    color: #0f172a !important;
+  }
+
+  /* Print Header and Citation */
+  .print-header {
+    border-bottom: 2pt solid #0f172a;
+    padding-bottom: 8pt;
+    margin-bottom: 12pt;
+  }
+
+  .print-footer {
+    border-top: 1pt solid #94a3b8;
+    padding-top: 6pt;
+    margin-top: 14pt;
+    font-size: 7.5pt;
+    color: #64748b;
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Hoorvia - 1,027 Printable Cheat Sheets & Digital Reference Library",
+  "description": "Hoorvia is a premier digital reference library hosting 1,027 searchable cheat sheets and printable PDF guides across cooking, crafting, tech, home, and reference charts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
